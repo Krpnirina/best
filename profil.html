@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profil</title>
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #007bff;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            border-bottom: 2px solid #0056b3;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Ajustement pour le bouton Se déconnecter */
+        }
+
+        .logo {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .profil-info {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .offer {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .offer-number {
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+            margin: 10px 0;
+        }
+
+        .offer-image {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .offer-button {
+            display: block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .offer-button:hover {
+            background-color: #0056b3;
+        }
+
+        .user-name {
+            float: right;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .logout-button {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+        }
+
+        .logout-button:hover {
+            background-color: #fff;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <img src="site.png" alt="Logo TBPF" class="logo">
+        Profil de <span class="user-name" id="userName"></span>
+        <a href="index.html" class="logout-button">Se déconnecter</a>
+    </h1>
+    <div class="profil-info">
+        <div class="offer">
+            <p class="offer-number">Offre 1</p>
+            <img src="offre1.jpg" alt="Offre 1" class="offer-image">
+            <a href="page_de_paiement1.html" class="offer-button">Acheter offre1</a>
+        </div>
+        <div class="offer">
+            <p class="offer-number">Offre 2</p>
+            <img src="offre2.jpg" alt="Offre 2" class="offer-image">
+            <a href="page_de_paiement2.html" class="offer-button">Acheter offre2</a>
+        </div>
+		<div class="offer">
+            <p class="offer-number">Offre 3</p>
+            <img src="offre3.jpg" alt="Offre 3" class="offer-image">
+            <a href="page_de_paiement3.html" class="offer-button">Acheter offre3</a>
+        </div>
+		<div class="offer">
+            <p class="offer-number">Offre 4</p>
+            <img src="offre4.jpg" alt="Offre 4" class="offer-image">
+            <a href="page_de_paiement4.html" class="offer-button">Acheter offre4</a>
+        </div>
+		<div class="offer">
+            <p class="offer-number">Offre 5</p>
+            <img src="offre5.jpg" alt="Offre 5" class="offer-image">
+            <a href="page_de_paiement5.html" class="offer-button">Acheter offre5</a>
+        </div>
+		<div class="offer">
+            <p class="offer-number">Offre 6</p>
+            <img src="offre6.jpg" alt="Offre 6" class="offer-image">
+            <a href="page_de_paiement6.html" class="offer-button">Acheter offre6</a>
+        </div>
+		<div class="offer">
+            <p class="offer-number">Offre 7</p>
+            <img src="offre7.jpg" alt="Offre 7" class="offer-image">
+            <a href="page_de_paiement7.html" class="offer-button">Acheter offre7</a>
+        </div>
+		<div class="offer">
+            <p class="offer-number">Offre 8</p>
+            <img src="offre8.jpg" alt="Offre 8" class="offer-image">
+            <a href="page_de_paiement8.html" class="offer-button">Acheter offre8</a>
+        </div>
+		<div class="offer">
+            <p class="offer-number">Offre 9</p>
+            <img src="offre9.jpg" alt="Offre 9" class="offer-image">
+            <a href="page_de_paiement9.html" class="offer-button">Acheter offre9</a>
+        </div>
+		<div class="offer">
+            <p class="offer-number">Offre 10</p>
+            <img src="offre10.jpg" alt="Offre 10" class="offer-image">
+            <a href="page_de_paiement10.html" class="offer-button">Acheter offre10</a>
+        </div>
+        <!-- Ajoutez d'autres images d'offres numérotées ici -->
+    </div>
+
+    <script>
+        const Nom d'utilisateur = localStorage.getItem("Nom d'utilisateur");
+        document.getElementById("userName").textContent = Nom d'utilisateur;
+    </script>
+</body>
+</html>
