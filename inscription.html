@@ -53,8 +53,29 @@
         }
     </style>
     <script>
-        // Votre script JavaScript existant ici
-        // ...
+        window.onload = function() {
+            const form = document.querySelector('form');
+            const agreementCheckbox = document.querySelector('#agreement');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const username = document.querySelector('#username').value;
+                const email = document.querySelector('#email').value;
+                const password = document.querySelector('#password').value;
+
+                if (agreementCheckbox.checked) {
+                    // Enregistrer les informations dans le stockage local
+                    localStorage.setItem('username', username);
+                    localStorage.setItem('email', email);
+                    localStorage.setItem('password', password);
+
+                    // Rediriger vers la page profil.html
+                    window.location.href = 'profil.html';
+                } else {
+                    alert('Vous devez accepter les conditions pour vous inscrire.');
+                }
+            });
+        };
     </script>
 </head>
 <body>
