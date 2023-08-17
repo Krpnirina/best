@@ -64,13 +64,22 @@
                 const password = document.querySelector('#password').value;
 
                 if (agreementCheckbox.checked) {
-                    // Enregistrer les informations dans le stockage local
-                    localStorage.setItem('username', username);
-                    localStorage.setItem('email', email);
-                    localStorage.setItem('password', password);
+                    // Vérifier si les informations existent déjà dans le stockage local
+                    if (
+                        localStorage.getItem('username') === username &&
+                        localStorage.getItem('email') === email &&
+                        localStorage.getItem('password') === password
+                    ) {
+                        alert('Ces informations d\'inscription existent déjà dans le stockage local.');
+                    } else {
+                        // Enregistrer les informations dans le stockage local
+                        localStorage.setItem('username', username);
+                        localStorage.setItem('email', email);
+                        localStorage.setItem('password', password);
 
-                    // Rediriger vers la page profil.html
-                    window.location.href = 'profil.html';
+                        // Rediriger vers la page profil.html
+                        window.location.href = 'profil.html';
+                    }
                 } else {
                     alert('Vous devez accepter les conditions pour vous inscrire.');
                 }
