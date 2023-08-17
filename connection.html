@@ -3,23 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Connexion</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            padding: 20px;
+            background-color: white;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .logo {
+            max-width: 100px;
+            height: auto;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        label, input {
+            display: block;
+            margin: 10px 0;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const username = document.querySelector('#username').value;
+                const password = document.querySelector('#password').value;
+                
+                // Vérifier les informations par rapport à votre stockage
+                // local ou à une base de données.
+                // Pour cet exemple, utilisons simplement des valeurs en dur pour les tests.
+                if (username === localStorage.getItem('username') && password === localStorage.getItem('password')) {
+                    // Rediriger vers la page profil.html si les informations sont correctes
+                    window.location.href = 'profil.html';
+                } else {
+                    alert('Nom d\'utilisateur ou mot de passe incorrect.');
+                }
+            });
+        };
+    </script>
 </head>
 <body>
-    <div class="login-container">
+    <div class="container">
         <img src="site.png" alt="Logo" class="logo">
-        <h2>Connexion</h2>
-        <form action="login.php" method="post">
-            <label for="username">Nom d'utilisateur</label>
+        <h1>Connexion</h1>
+        <form>
+            <label for="username">Nom d'utilisateur:</label>
             <input type="text" id="username" name="username" required>
             
-            <label for="password">Mot de passe</label>
+            <label for="password">Mot de passe:</label>
             <input type="password" id="password" name="password" required>
             
             <button type="submit">Se connecter</button>
         </form>
-        <p>Pas encore inscrit ? <a href="inscription.php">S'inscrire ici</a></p>
     </div>
 </body>
 </html>
